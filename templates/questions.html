@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Survey Home{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <form action="/questions" method="post">  
+
+        <h1>{{ title }}</h1>
+        <p>{{ instructions }}</p> 
+        <p>{{ questions[questions_index].question }}</p>
+
+        {% for choice in questions[questions_index].choices %}
+            {% if loop.first %}
+            <input type="radio" name="choice" value='{{ questions[questions_index].question + "  " +choice}}' checked>
+            {% else %}
+            <input type="radio" name="choice" value='{{ questions[questions_index].question + "  " +choice}}'>
+            {% endif %}
+            <label for="choice">{{ choice }}</label><br>
+        {% endfor %}
+        
+        <button type="submit">Submit</button>
+    </form>
+</div>
+{% endblock content %}

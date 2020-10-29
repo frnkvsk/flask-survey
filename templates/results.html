@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Survey Results{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <form action="/">        
+        <h1>Thank you</h1>
+        <h2>Your Survey Results:</h2>
+        {% for result in responses %}
+            <p>{{ result }}</p>
+        {% endfor %}
+    </form>
+</div>
+{% endblock content %}

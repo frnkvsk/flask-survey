@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Survey Home{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <form action="/questions" method="post">
+        <input type="hidden" name="choice" value="choice">
+        <h1>{{ title }}</h1>
+        <p>{{ instructions }}</p>
+        <button type="submit">Start</button>
+    </form>
+</div>
+{% endblock content %}
